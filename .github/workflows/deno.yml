@@ -2,15 +2,15 @@ name: Github action demo
 on: [push]
 jobs: 
   Explore_github_actions: 
-  runs-on: ubuntu-latest
-  steps: 
-    - run: echo "The job was automatically triggered by a ${{github.event_name}}"
-    - run: echo "This job is run on a ${{runner.os}}"
-    - run: echo "This name of your branch is ${{github.ref}} and your repository ${{github.repository}}"
-    - name: Checkout repository code
-      uses: actions/checkout@v4
-    - run: echo "The ${{github.repository}} has been cloned to the runner"
-    - run: echo "The workflow is now ready to test your code on the runner"
-    - name: List files in the repository
-      run: ls ${{github.workspace}}
-    - run: echo "This job's status is ${{job.status}}." 
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "The job was automatically triggered by a ${{github.event_name}}"
+      - run: echo "This job is run on a ${{runner.os}}"
+      - run: echo "This name of your branch is ${{github.ref}} and your repository ${{github.repository}}"
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - run: echo "The ${{github.repository}} has been cloned to the runner"
+      - run: echo "The workflow is now ready to test your code on the runner"
+      - name: List files in the repository
+        run: ls ${{github.workspace}}
+      - run: echo "This job's status is ${{job.status}}." 
