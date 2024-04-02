@@ -1,0 +1,47 @@
+name: Artifact Pass
+
+on:
+  push:
+    branches:
+      - main
+  
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs: 
+      first_output: ${{ steps.set_output.outputs.first_number }}
+      second_output: ${{steps.set_output.outputs.second_number}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set outputs
+        id: set_output
+        run: |
+          echo "first_number=7" >> GITHUB_ENV
+          echo "second_number=3" >> GITHUB_ENV
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v2
+      - name: Sum outputs
+        run: |
+          sum = ${{${{needs.job1.outputs.first_output}} + ${{needs.job1.outputs.second_output}}}}
+          echo "Sum is $sum"
+  
+        
+        
+        type: string
+    secrets:
+      token:
+        required: true
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v4
+      with:
+        repo-token: ${{ secrets.token }}
+        configuration-path: ${{ inputs.config-path }}
