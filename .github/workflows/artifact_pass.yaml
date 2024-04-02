@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Sum outputs
         run: |
           sum = ${{${{needs.job1.outputs.first_output}} + ${{needs.job1.outputs.second_output}}}}
