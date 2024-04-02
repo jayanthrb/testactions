@@ -17,6 +17,6 @@ jobs:
       - name: "Print environment stuff"
         run: echo "Repo = $GITHUB_ACTION_REPOSITORY | Actions = $GITHUB_ACTIONS | Actor = $GITHUB_ACTOR | ACtorId = $GITHUB_ACTOR_ID"
       - name: "Print Codespace variable"
-        run: echo "Codespace = ${{secrets.HELLO}} | Actions = $GITHUB_ACTIONS | Actor = $GITHUB_ACTOR | ACtorId = $GITHUB_ACTOR_ID"  
+        run: ${{secrets.HELLO}}
         env:
           First_Name: Mona
