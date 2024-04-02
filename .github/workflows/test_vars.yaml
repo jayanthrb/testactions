@@ -16,7 +16,7 @@ jobs:
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
       - name: "Print environment stuff"
         run: echo "Repo = $GITHUB_ACTION_REPOSITORY | Actions = $GITHUB_ACTIONS | Actor = $GITHUB_ACTOR | ACtorId = $GITHUB_ACTOR_ID"
-      - name: "Print Organization Secret"
+      - name: Print Organization Secret
         run: echo "My organization secret:${{ secrets.HELLO }}"
         env:
           First_Name: Mona
