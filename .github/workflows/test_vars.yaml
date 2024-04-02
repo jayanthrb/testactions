@@ -14,5 +14,7 @@ jobs:
     steps:
       - name: "Say Hello Mona it's Monday"
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+      - name: "Print environment stuff"
+        run: echo "Repo = $GITHUB_ACTION_REPOSITORY | Actions = $GITHUB_ACTIONS | Actor = $GITHUB_ACTOR | ACtorId = $GITHUB_ACTOR_ID"
         env:
           First_Name: Mona
