@@ -29,19 +29,3 @@ jobs:
         run: |
           sum = ${{${{needs.job1.outputs.first_output}} + ${{needs.job1.outputs.second_output}}}}
           echo "Sum is $sum"
-  
-        
-        
-        type: string
-    secrets:
-      token:
-        required: true
-
-jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/labeler@v4
-      with:
-        repo-token: ${{ secrets.token }}
-        configuration-path: ${{ inputs.config-path }}
