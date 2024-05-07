@@ -1,9 +1,7 @@
 name: Two-Job Workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   job1:
