@@ -2,7 +2,11 @@ name: Two-Job Workflow
 
 on:
   workflow_dispatch:
-
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
 jobs:
   job1:
     runs-on: ubuntu-latest
